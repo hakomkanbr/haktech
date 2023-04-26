@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "components/elements/table/Table.js",
+    "components/utils/c-image.tsx",
+    "components/utils/expandable-text.js",
+    "components/utils/divider.js",
+    "components/views/admin/categories/categories.tsx",
+    "services/errors.js",
+    "points.site.ts",
+    "components/views/auth/reset-passwordatsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

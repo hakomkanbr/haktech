@@ -1,0 +1,101 @@
+{
+    buyMethod === "onCredit" ? (
+        <>
+        <Form.Item label= "الأسم على الكرت" >
+        <Form.Item
+                                                name="username"
+    noStyle
+    rules = { [{ required: true, message: 'Username is required' }]}
+        >
+        <Input style={ { width: "100%" } } placeholder = "الأسم على الكرت" />
+            </Form.Item>
+            < /Form.Item>
+            < Form.Item label = "رقم الكرت" >
+                <Form.Item
+                                                name="username"
+    noStyle
+    rules = { [{ required: true, message: 'Username is required' }]}
+        >
+        <Input style={ { width: "100%" } } placeholder = "رقم الكرت" />
+            </Form.Item>
+            < /Form.Item>
+            < Form.Item style = {{ marginBottom: 0 }
+}>
+    <Form.Item
+                                                label="أخر تاريخ الأستعمال"
+name = "year"
+rules = { [{ required: true }]}
+style = {{ display: 'inline-block', width: 'calc(50% - 8px)' }}
+                                            >
+    <Input />
+    < /Form.Item>
+    < Form.Item
+label = "CVV"
+name = "month"
+rules = { [{ required: true }]}
+style = {{ display: 'inline-block', width: 'calc(50% - 8px)', margin: '0 8px' }}
+                                            >
+    <Input />
+    < /Form.Item>
+    < /Form.Item>
+{/* <Form.Item label=" " colon={false}>
+                                            <Button type="primary" htmlType="submit">
+                                                أرسال
+                                            </Button>
+                                        </Form.Item> */}
+</>
+                                ) : ""
+                            }
+
+
+
+
+                              <Col
+            xs={{ span: 12, order: 4 }}
+            sm={{ span: 6, order: 4 }}
+            md={{ span: 6, order: 4 }}
+            lg={{ span: 8, order: 4 }}
+          >
+            <FlexDiv
+              cstyle={`
+                @media (max-width: 600px) {
+                  margin-top: 15px;
+                }
+              `}
+              alignItems="center"
+              justifyContent="end"
+            >
+              {
+                loading ? "" :
+                  user && Object.keys(user).length ? (
+                    <Dropdown menu={{ items }} placement="bottomRight">
+                      <Avatar style={{ backgroundColor: '#fff', color: "black", cursor: "pointer", margin: "0 12px" }} size="large" icon={<UserOutlined />} />
+                    </Dropdown>
+                  ) : (
+                    <Button style={{ margin: "0 20px" }} onClick={() => {
+                      custumerContext.openOrCloseLogin();
+                    }} type="text">تسجيل الدخول</Button>
+                  )
+              }
+
+              <BadgeStyle count={cardProductsCount}>
+                <Text onClick={onClickAraba} cstyle={`cursor: pointer;`} size={25}>
+                  <AiOutlineShoppingCart />
+                </Text>
+              </BadgeStyle>
+              {/* <div style={{ marginLeft: 25 }}>
+                <Text as="h4" color={theam.colors.black} margin={0}>
+                  عربتك
+                </Text>
+                <Text
+                  color={theam.colors.orange}
+                  size={14}
+                  bold="500"
+                  as="p"
+                  margin={0}
+                >
+                  $0.00
+                </Text>
+              </div> */}
+            </FlexDiv>
+          </Col>
