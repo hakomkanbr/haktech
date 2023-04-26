@@ -38,10 +38,12 @@ export default function CoNavbar() {
                                     items: item.children,
                                 }}
                             >
-                                <a href="/">
-                                    {item.label}
-                                    {item.children?.length ? <DownOutlined /> : ""}
-                                </a>
+                                <Link href="/">
+                                    <a>
+                                        {item.label}
+                                        {item.children?.length ? <DownOutlined /> : ""}
+                                    </a>
+                                </Link>
                             </Dropdown>
                         ))}
                     </div>
